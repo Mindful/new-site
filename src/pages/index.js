@@ -1,6 +1,9 @@
 import React from "react"
-import Helmet from 'react-helmet'
-
+import github from "../images/scaled-github.svg"
+import se from "../images/scaled-se.svg"
+import linkedin from "../images/scaled-linkedin.svg"
+import scholar from "../images/scaled-scholar.svg"
+import email from "../images/scaled-email.svg"
 
 function header() {
   return <nav className="flex items-center justify-between flex-wrap bg-green p-0 h-16">
@@ -25,8 +28,18 @@ function header() {
 }
 
 function textbox() {
-  return <div className="bg-white flex m-10 p-5 shadowed">
+  return <div className="bg-white flex m-10 p-5 shadowed w-full">
     oogity boogity
+  </div>
+}
+
+function sidebar() {
+  return <div className="flex-col items-center bg-transparent h-full pr-5 pt-5">
+    <img src={github} alt="github" className="pt-2 pb-2"/>
+    <img src={se} alt="stack exchange" className="pt-2 pb-2"/>
+    <img src={linkedin} alt="linkedin" className="pt-2 pb-2"/>
+    <img src={scholar} alt="google scholar" className="pt-2 pb-2"/>
+    <img src={email} alt="email" className="pt-2 pb-2"/>
   </div>
 }
 
@@ -35,7 +48,10 @@ export default function IndexPage() {
   return (
       <main>
         {header()}
-        {textbox()}
+        <div className="flex flex-row">
+          {textbox()}
+          {sidebar()}
+        </div>
       </main>
   )
 }
