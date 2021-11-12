@@ -17,6 +17,15 @@ module.exports = {
     "gatsby-transformer-sharp",
     'gatsby-plugin-postcss',
     {
+      resolve: `gatsby-plugin-i18n`,
+      options: {
+        langKeyDefault: 'en',
+        langKeyForNull: 'en',
+        prefixDefault: false,
+        useLangKeyLayout: false,
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",

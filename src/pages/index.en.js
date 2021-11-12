@@ -4,6 +4,7 @@ import se from "../images/scaled-se.svg"
 import linkedin from "../images/scaled-linkedin.svg"
 import scholar from "../images/scaled-scholar.svg"
 import email from "../images/scaled-email.svg"
+import LanguageSelector from "../components/language_selector"
 
 function header() {
   return <nav className="flex items-center justify-between flex-wrap bg-green p-0 h-16">
@@ -44,11 +45,12 @@ function sidebar() {
 }
 
 
-export default function IndexPage() {
+export default function IndexPage({data, location}) {
   return (
       <main>
         {header()}
         <div className="flex flex-row">
+          <LanguageSelector location={location} lang="en"/>
           {textbox()}
           {sidebar()}
         </div>
