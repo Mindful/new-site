@@ -14,6 +14,12 @@ export function PostLink({ post }) {
     </div>
 }
 
+export function LangLink({lang, to, children, className}) {
+    return <Link to={lang === 'en' ? to : '/'+lang+to} className={className}>
+        {children}
+    </Link>
+}
+
 // https://www.gatsbyjs.com/blog/2020-02-19-how-to-build-multilingual-sites-with-gatsby/
 export function LanguageSelector({lang, location, className}) {
     return {
@@ -37,15 +43,15 @@ export function Header({lang, location}) {
         </div>
         <div style={{borderLeft: "1px solid white", height: "100%"}} className="mr-6"/>
         <div className="w-full flex items-center text-white">
-                <a href="#responsive-header" className="mr-4">
-                    Software
-                </a>
-                <a href="#responsive-header" className=" mr-4">
-                    Translation
-                </a>
-                <a href="#responsive-header" className="mr-4">
-                    Blog
-                </a>
+                <LangLink to={'/technical'} lang={lang} className="mr-4">
+                    SOFTWARE
+                </LangLink>
+                <LangLink to={'/translation'} lang={lang} className="mr-4">
+                    INTERPRETATION
+                </LangLink>
+                <LangLink to={'/blog'} lang={lang}>
+                    BLOG
+                </LangLink>
                 <LanguageSelector lang={lang} location={location} className="absolute right-4"/>
         </div>
     </nav>
@@ -59,11 +65,21 @@ export function Textbox({lang, location, children}) {
 
 export function Sidebar() {
     return <div className="flex-col items-center bg-transparent h-full pr-5 pt-5">
-        <img src={github} alt="github" className="pt-2 pb-2"/>
-        <img src={se} alt="stack exchange" className="pt-2 pb-2"/>
-        <img src={linkedin} alt="linkedin" className="pt-2 pb-2"/>
-        <img src={scholar} alt="google scholar" className="pt-2 pb-2"/>
-        <img src={email} alt="email" className="pt-2 pb-2"/>
+        <Link to={'https://github.com/Mindful'}>
+            <img src={github} alt="github" className="pt-2 pb-2"/>
+        </Link>
+        <Link to={'https://stackexchange.com/users/5319885/mindful'}>
+            <img src={se} alt="stack exchange" className="pt-2 pb-2"/>
+        </Link>
+        <Link to={'https://www.linkedin.com/in/joshuatanner2'}>
+            <img src={linkedin} alt="linkedin" className="pt-2 pb-2"/>
+        </Link>
+        <Link to={'https://scholar.google.com/citations?user=OqYthY0AAAAJ&h'}>
+            <img src={scholar} alt="google scholar" className="pt-2 pb-2"/>
+        </Link>
+        <a href={'mailto:mindful.jt@gmail.com'}>
+            <img src={email} alt="email" className="pt-2 pb-2"/>
+        </a>
     </div>
 }
 
