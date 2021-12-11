@@ -6,6 +6,14 @@ import linkedin from "./images/scaled-linkedin.svg";
 import scholar from "./images/scaled-scholar.svg";
 import email from "./images/scaled-email.svg";
 
+export function PostLink({ post }) {
+    return <div>
+        <Link to={post.frontmatter.slug}>
+            {post.frontmatter.title} ({post.frontmatter.date})
+        </Link>
+    </div>
+}
+
 // https://www.gatsbyjs.com/blog/2020-02-19-how-to-build-multilingual-sites-with-gatsby/
 export function LanguageSelector({lang, location, className}) {
     return {

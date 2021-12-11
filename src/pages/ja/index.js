@@ -1,5 +1,5 @@
 import React from "react"
-import {Header, LanguageSelector, Sidebar, Textbox} from "../components"
+import {Header, LanguageSelector, Sidebar, Textbox} from "../../components"
 
 
 

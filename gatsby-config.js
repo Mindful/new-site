@@ -12,19 +12,9 @@ module.exports = {
       },
     },
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     'gatsby-plugin-postcss',
-    {
-      resolve: `gatsby-plugin-i18n`,
-      options: {
-        langKeyDefault: 'en',
-        langKeyForNull: 'en',
-        prefixDefault: false,
-        useLangKeyLayout: false,
-      },
-    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -40,6 +30,22 @@ module.exports = {
         path: "./src/pages/",
       },
       __key: "pages",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "blog",
+        path: "./src/blog/",
+      },
+      __key: "blog",
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        footnotes: true,
+        gfm: true, //github flavored markdown
+        plugins: [],
+      },
     },
   ],
 };
