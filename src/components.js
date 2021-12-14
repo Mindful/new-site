@@ -5,6 +5,7 @@ import se from "./images/scaled-se.svg";
 import linkedin from "./images/scaled-linkedin.svg";
 import scholar from "./images/scaled-scholar.svg";
 import email from "./images/scaled-email.svg";
+import portrait from "./images/portrait.jpg";
 
 export function PostLink({ post }) {
     return <div>
@@ -30,7 +31,7 @@ export function LanguageSelector({lang, location, className}) {
         ),
         'ja': (
             <Link className={className} to={location.pathname.replace("/" + lang + "/", "/")}>
-                english
+                English
             </Link>
         )
     }[lang]
@@ -39,7 +40,7 @@ export function LanguageSelector({lang, location, className}) {
 export function Header({lang, location}) {
     return <nav className="flex bg-green p-0 h-16">
         <div className="flex items-center flex-shrink-0 text-white mr-6 ml-6">
-            <span>Joshua Tanner</span>
+            <LangLink to={'/'} lang={lang}><span>Joshua Tanner</span></LangLink>
         </div>
         <div style={{borderLeft: "1px solid white", height: "100%"}} className="mr-6"/>
         <div className="w-full flex items-center text-white">
@@ -57,10 +58,28 @@ export function Header({lang, location}) {
     </nav>
 }
 
-export function Textbox({lang, location, children}) {
-    return <div className="bg-white flex m-10 p-14 shadowed w-full">
+export function Layout({lang, location, children, className}) {
+    return (
+        <main>
+            <Header location={location} lang={lang}/>
+            <div className={"flex " + (className ? className : '')}>
+                {children}
+                <Sidebar/>
+            </div>
+        </main>
+    )
+}
+
+
+
+export function Textbox({lang, location, children, className}) {
+    return <div className={"bg-white flex m-10 p-14 shadowed w-full " + (className ? className : '')}>
         {children}
     </div>
+}
+
+export function Heading({children}) {
+    return <header className={"text-4xl my-4"}>{children}</header>
 }
 
 export function Sidebar() {
