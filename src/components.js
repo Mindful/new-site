@@ -5,12 +5,11 @@ import se from "./images/scaled-se.svg";
 import linkedin from "./images/scaled-linkedin.svg";
 import scholar from "./images/scaled-scholar.svg";
 import email from "./images/scaled-email.svg";
-import portrait from "./images/portrait.jpg";
 
 export function PostLink({ post }) {
     return <div>
         <Link to={post.frontmatter.slug}>
-            {post.frontmatter.title} ({post.frontmatter.date})
+            {post.frontmatter.title}
         </Link>
     </div>
 }

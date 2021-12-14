@@ -18,5 +18,41 @@
 }
 
 .blogpost  > p {
-    @apply mb-3
+    @apply my-2
+}
+
+.blogpost > ul {
+    @apply list-disc list-inside my-2
+}
+
+.blogpost > ol {
+    @apply list-decimal list-inside my-2
+}
+
+.blogpost > h1 {
+    @apply text-3xl my-2
+}
+
+.blogpost > h2 {
+    @apply text-2xl my-2
+}
+
+.blogpost >h3 {
+    @apply text-xl my-2
+}
+
+.blogpost > table > tbody {
+    @apply text-center
+}
+
+.blogpost > table > thead {
+    @apply text-center
+}
+
+.blogpost > blockquote {
+    @apply bg-gray p-2 rounded italic
+}
+
+.blogpost > * > code {
+    @apply bg-gray rounded
 }

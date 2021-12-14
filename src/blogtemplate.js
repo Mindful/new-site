@@ -13,13 +13,13 @@ export default function blogtemplate({
     const Posts = edges
         .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
         .map(edge =>
-            <TextBox className={'flex-col mb-12'}>
+            <TextBox className={'flex-col mb-6'}>
                 <Heading>
                     <PostLink key={edge.node.id} post={edge.node}>
                     {edge.node.frontmatter.title}
                     </PostLink>
                 </Heading>
-                <span className={'mb-4'}>{edge.node.frontmatter.date}</span>
+                <span className={'mb-2'}>{edge.node.frontmatter.date}</span>
                 <div className={'blogpost'}
                     dangerouslySetInnerHTML={{ __html: edge.node.html }}
                 />
@@ -46,7 +46,7 @@ export const pageQuery = graphql`
           id
           html
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "YYYY/MM/DD")
             slug
             title
           }

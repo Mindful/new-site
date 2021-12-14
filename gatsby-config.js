@@ -59,9 +59,7 @@ module.exports = {
             options: {
               footnoteBackRefPreviousElementDisplay: "inline",
               footnoteBackRefDisplay: "inline",
-              footnoteBackRefInnerText: "^", // Defaults to: "↩"
-              //use "front" for Wikipedia style ^ links
-              footnoteBackRefInnerTextStartPosition: "front",
+              footnoteBackRefInnerText: "^",
               useFootnoteMarkerText: true, // Defaults to false
             }
           }
