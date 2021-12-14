@@ -5,6 +5,64 @@ import se from "./images/scaled-se.svg";
 import linkedin from "./images/scaled-linkedin.svg";
 import scholar from "./images/scaled-scholar.svg";
 import email from "./images/scaled-email.svg";
+import graduation from "./images/icon-graduation.svg";
+import translation from "./images/icon-language.svg";
+import work from "./images/icon-work.svg";
+import university from "./images/icon-university.svg";
+import { Chrono } from "react-chrono";
+import {theme} from "../tailwind.config";
+
+
+export function Timeline() {
+    const items = [{
+            cardTitle: "2013/6",
+            cardDetailedText: "Intern at eBay Global Data Infrastructure",
+        },
+        {
+            title: "2014/4",
+            cardDetailedText: "Exchange student at University of Hyogo",
+        },
+        {
+            title: "2015/4",
+            cardDetailedText: "Receive BS in Computer Science",
+        },
+        {
+            title: "2015/9",
+            cardDetailedText: "Software Engineer at eBay Global Shipping",
+        },
+        {
+            title: "2016/7",
+            cardDetailedText: "Translate \"Maxel\" app into Japanese",
+        },
+    ];
+
+    return <div className={'w-full'}>
+            <Chrono mode="VERTICAL_ALTERNATING"  cardHeight={100}  theme={{
+                primary: theme.colors.black,
+                secondary: theme.colors.white,
+                cardBgColor: theme.colors.transparent,
+                cardForeColor: theme.colors.black,
+                titleColor: theme.colors.black
+            }} hideControls={true} useReadMore={false} scrollable={false}>
+
+                    <div className="absolute -bottom-3">
+                        <p className={'text-right'}><b>2013/6</b><br/>Intern at eBay Global Data Infrastructure</p>
+                    </div>
+                <div className="absolute -bottom-3">
+                    <p className={'text-left'}><b>2014/4</b><br/>Exchange student at University of Hyogo</p>
+                </div>
+
+                <div className="chrono-icons">
+                    <img src={work} alt="image1" />
+                    <img src={university} alt="image1" />
+                    <img src={graduation} alt="image1" />
+                    <img src={work} alt="image1" />
+                    <img src={translation} alt="image1" />
+                </div>
+            </Chrono>
+        </div>
+
+}
 
 export function PostLink({ post }) {
     return <div>
