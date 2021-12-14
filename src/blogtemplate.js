@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import {Heading, Layout, PostLink, Textbox} from "./components"
+import {Heading, Layout, PostLink, BoundingBox, TextBox} from "./components"
 
 export default function blogtemplate({
                        data: {
@@ -13,23 +13,23 @@ export default function blogtemplate({
     const Posts = edges
         .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
         .map(edge =>
-            <Textbox className={'flex-col'}>
+            <TextBox className={'flex-col mb-12'}>
                 <Heading>
                     <PostLink key={edge.node.id} post={edge.node}>
                     {edge.node.frontmatter.title}
                     </PostLink>
                 </Heading>
-                <span>{edge.node.frontmatter.date}</span>
-                <p>
-                    {edge.node.excerpt}
-                </p>
-            </Textbox>
+                <span className={'mb-4'}>{edge.node.frontmatter.date}</span>
+                <div className={'blogpost'}
+                    dangerouslySetInnerHTML={{ __html: edge.node.html }}
+                />
+            </TextBox>
         )
 
     return <Layout lang={lang} location={location}>
-        <div className={'w-full mr-10 pr-14'}>
+        <BoundingBox className={'flex-col'}>
             {Posts}
-        </div>
+        </BoundingBox>
     </Layout>
 }
 
@@ -44,7 +44,7 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          excerpt(pruneLength: 250)
+          html
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             slug

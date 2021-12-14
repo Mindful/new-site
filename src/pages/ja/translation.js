@@ -1,5 +1,5 @@
 import React from "react"
-import {Heading, Layout, Textbox} from "../../components"
+import {Heading, Layout, ContentBox} from "../../components"
 
 
 
@@ -8,7 +8,7 @@ export default function IndexPage({data, location}) {
     let lang = "ja";
     return (
         <Layout lang={lang} location={location}>
-            <Textbox className={'flex-col'}>
+            <ContentBox className={'flex-col'}>
                 <Heading>通訳</Heading>
                 <p>TODO</p>
                 <hr className={'my-8'}/>
@@ -17,7 +17,7 @@ export default function IndexPage({data, location}) {
 
                     また、もしソフトウェア開発や人工知能に関係する内容の通訳または翻訳が必要であれば、その分野で日本語と英語の両方で働いた経験を持つ私にお任せください。
                     メールで気軽に問い合わせていただければ幸いです。</p>
-            </Textbox>
+            </ContentBox>
         </Layout>
     )
 }

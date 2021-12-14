@@ -71,12 +71,29 @@ export function Layout({lang, location, children, className}) {
 }
 
 
-
-export function Textbox({lang, location, children, className}) {
-    return <div className={"bg-white flex m-10 p-14 shadowed w-full " + (className ? className : '')}>
-        {children}
+export function TextBox(props) {
+    return <div className={'flex p-14 bg-white shadowed w-full ' + (props.className ? props.className : '')}>
+        {props.children}
     </div>
 }
+
+export function BoundingBox(props) {
+    return <div className={"flex m-10 w-full " + (props.className ? props.className : '')}>
+        {props.children}
+    </div>
+}
+
+export function ContentBox(props) {
+    return BoundingBox({children: TextBox(props)})
+}
+
+
+
+// export function Textbox({lang, location, children, className}) {
+//     return <div className={"bg-white flex m-10 p-14 shadowed w-full " + (className ? className : '')}>
+//         {children}
+//     </div>
+// }
 
 export function Heading({children}) {
     return <header className={"text-4xl my-4"}>{children}</header>
