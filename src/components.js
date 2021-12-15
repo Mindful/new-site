@@ -13,14 +13,26 @@ import { Chrono } from "react-chrono";
 import {theme} from "../tailwind.config";
 
 
+function Leftcard(props) {
+    return <div className="absolute -bottom-1 w-full">
+        <p className={'text-right text-xs'}><b>{props.date}</b><br/>{props.content}</p>
+    </div>
+}
+
+function Rightcard(props) {
+    return <div className="absolute -bottom-1 w-full">
+        <p className={'text-left text-xs'}><b>{props.date}</b><br/>{props.content}</p>
+    </div>
+}
+
 export function Timeline() {
     const items = [{
             cardTitle: "2013/6",
-            cardDetailedText: "Intern at eBay Global Data Infrastructure",
+            cardDetailedText: "Intern@eBay Global Data Infra",
         },
         {
             title: "2014/4",
-            cardDetailedText: "Exchange student at University of Hyogo",
+            cardDetailedText: "Exchange student@University of Hyogo",
         },
         {
             title: "2015/4",
@@ -28,7 +40,7 @@ export function Timeline() {
         },
         {
             title: "2015/9",
-            cardDetailedText: "Software Engineer at eBay Global Shipping",
+            cardDetailedText: "Engineer eBay Global Shipping",
         },
         {
             title: "2016/7",
@@ -37,7 +49,7 @@ export function Timeline() {
     ];
 
     return <div className={'w-full'}>
-            <Chrono mode="VERTICAL_ALTERNATING"  cardHeight={100}  theme={{
+            <Chrono mode="VERTICAL_ALTERNATING"  cardHeight={45}  theme={{
                 primary: theme.colors.black,
                 secondary: theme.colors.white,
                 cardBgColor: theme.colors.transparent,
@@ -45,19 +57,39 @@ export function Timeline() {
                 titleColor: theme.colors.black
             }} hideControls={true} useReadMore={false} scrollable={false}>
 
-                    <div className="absolute -bottom-3">
-                        <p className={'text-right'}><b>2013/6</b><br/>Intern at eBay Global Data Infrastructure</p>
-                    </div>
-                <div className="absolute -bottom-3">
-                    <p className={'text-left'}><b>2014/4</b><br/>Exchange student at University of Hyogo</p>
-                </div>
+                <Leftcard date={'2013/6'} content={'Intern@eBay Global Data Infrastructure'}/>
+                <Rightcard date={'2014/4'} content={'Exchange student@University of Hyogo'}/>
+                <Leftcard date={'2015/4'} content={'BS in Computer Science'}/>
+                <Rightcard date={'2015/9'} content={'Engineer@eBay Global Shipping'}/>
+                <Leftcard date={'2016/7'} content={'Translate "Maxel" app into Japanese'}/>
+                <Rightcard date={'2016/11'} content={'Engineer@eBay New Product Dev'}/>
+                <Leftcard date={'2018/9'} content={'Interpreter@Japan-America Grassroots Summit'}/>
+                <Rightcard date={'2019/4'} content={'Interpreter@Sakura-Con'}/>
+                <Leftcard date={'2019/8'} content={'Interpreter@Jonathan Ng Japan Tour'}/>
+                <Rightcard date={'2019/9'} content={'Interpreter@Crunchyroll Expo'}/>
+                <Leftcard date={'2019/9'} content={'Grad student@University of Washington'}/>
+                <Rightcard date={'2020/6'} content={'Research Intern@Octanove Labs'}/>
+                <Leftcard date={'2020/12'} content={'Research Intern@University of Tokyo'}/>
+                <Rightcard date={'2021/7'} content={'Intern@Mantra Inc. & Fuku Inc.'}/>
+                <Leftcard date={'2015/4'} content={'MSc in Computational Linguistics'}/>
+
 
                 <div className="chrono-icons">
-                    <img src={work} alt="image1" />
-                    <img src={university} alt="image1" />
-                    <img src={graduation} alt="image1" />
-                    <img src={work} alt="image1" />
-                    <img src={translation} alt="image1" />
+                    <img src={work} alt="" />
+                    <img src={university} alt="" />
+                    <img src={graduation} alt="" />
+                    <img src={work} alt="" />
+                    <img src={translation} alt="" />
+                    <img src={work} alt="" />
+                    <img src={translation} alt="" />
+                    <img src={translation} alt="" />
+                    <img src={translation} alt="" />
+                    <img src={translation} alt="" />
+                    <img src={university} alt="" />
+                    <img src={work} alt="" />
+                    <img src={university} alt="" />
+                    <img src={work} alt="" />
+                    <img src={graduation} alt="" />
                 </div>
             </Chrono>
         </div>

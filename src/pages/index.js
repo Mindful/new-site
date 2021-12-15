@@ -10,8 +10,8 @@ export default function IndexPage({data, location}) {
     return (
         <Layout lang={lang} location={location}>
             <ContentBox className={'flex-row'}>
-                <div className={'w-80'}>
-                    <img className="flex flex-shrink rounded-full h-80" src={portrait}/>
+                <div className={'w-1/3'}>
+                    <img className="flex flex-shrink rounded-full h-80 m-auto" src={portrait}/>
                     <Timeline></Timeline>
                 </div>
 
