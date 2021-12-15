@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunksite=self.webpackChunksite||[]).push([[430],{4123:function(e,t,n){n.r(t),n.d(t,{default:function(){return c}});var l=n(7294),a=n(3400);function c(e){e.data;var t=e.location;return l.createElement("main",null,l.createElement(a.h4,{location:t,lang:"ja"}),l.createElement("div",{className:"flex flex-row"},l.createElement(a.Y_,null,l.createElement("p",null,"工事中")),l.createElement(a.YE,null)))}}}]);
+//# sourceMappingURL=component---src-pages-ja-index-js-473b230f318efcbc10d5.js.map
