@@ -11,7 +11,11 @@ import work from "./images/icon-work.svg";
 import university from "./images/icon-university.svg";
 import { Chrono } from "react-chrono";
 import {theme} from "../tailwind.config";
+import portrait from "./images/portrait.jpg";
 
+export function Portrait() {
+    return <img className="flex max-h-[30%] rounded-full m-auto" alt="Self portrait" src={portrait}/>
+}
 
 function Leftcard(props) {
     return <div className="absolute -bottom-1 w-full">
@@ -192,18 +196,18 @@ export function Heading({children}) {
 
 export function Sidebar() {
     return <div className="flex flex-row md:flex-col md:shrink-[0.15] bg-transparent md:h-full md:pr-5 md:pt-5 md:space-x-0 space-x-5 bg-transparent">
-        <Link to={'https://github.com/Mindful'}>
+        <a href={'https://github.com/Mindful'}>
             <img src={github} alt="github" className="pt-2 pb-2"/>
-        </Link>
-        <Link to={'https://stackexchange.com/users/5319885/mindful'}>
+        </a>
+        <a href={'https://stackexchange.com/users/5319885/mindful'}>
             <img src={se} alt="stack exchange" className="pt-2 pb-2"/>
-        </Link>
-        <Link to={'https://www.linkedin.com/in/joshuatanner2'}>
+        </a>
+        <a href={'https://www.linkedin.com/in/joshuatanner2'}>
             <img src={linkedin} alt="linkedin" className="pt-2 pb-2"/>
-        </Link>
-        <Link to={'https://scholar.google.com/citations?user=OqYthY0AAAAJ&h'}>
+        </a>
+        <a href={'https://scholar.google.com/citations?user=OqYthY0AAAAJ&h'}>
             <img src={scholar} alt="google scholar" className="pt-2 pb-2"/>
-        </Link>
+        </a>
         <a href={'mailto:mindful.jt@gmail.com'}>
             <img src={email} alt="email" className="pt-2 pb-2"/>
         </a>
