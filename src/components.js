@@ -132,7 +132,8 @@ export function Header({lang, location}) {
             <LangLink to={'/'} lang={lang}><span>Joshua Tanner</span></LangLink>
         </div>
         <div style={{borderLeft: "1px solid white", height: "100%"}} className="mr-6"/>
-        <div className="w-full flex items-center text-white">
+        <div className="flex w-full items-center text-white">
+            <div className="hidden sm:flex">
                 <LangLink to={'/technical'} lang={lang} className="mr-4">
                     SOFTWARE
                 </LangLink>
@@ -142,6 +143,7 @@ export function Header({lang, location}) {
                 <LangLink to={'/blog'} lang={lang}>
                     BLOG
                 </LangLink>
+            </div>
                 <LanguageSelector lang={lang} location={location} className="absolute right-4"/>
         </div>
     </nav>
@@ -151,7 +153,7 @@ export function Layout({lang, location, children, className}) {
     return (
         <main>
             <Header location={location} lang={lang}/>
-            <div className={"flex " + (className ? className : '')}>
+            <div className={"flex md:flex-row flex-col px-10 md:pr-0 items-center md:items-start " + (className ? className : '')}>
                 {children}
                 <Sidebar/>
             </div>
@@ -189,7 +191,7 @@ export function Heading({children}) {
 }
 
 export function Sidebar() {
-    return <div className="flex-col items-center bg-transparent h-full pr-5 pt-5">
+    return <div className="flex flex-row md:flex-col md:shrink-[0.15] bg-transparent md:h-full md:pr-5 md:pt-5 md:space-x-0 space-x-5 bg-transparent">
         <Link to={'https://github.com/Mindful'}>
             <img src={github} alt="github" className="pt-2 pb-2"/>
         </Link>

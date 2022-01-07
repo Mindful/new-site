@@ -11,7 +11,7 @@ export default function IndexPage({data, location}) {
         <Layout lang={lang} location={location}>
             <ContentBox className={'flex-row'}>
                 <div className={'w-1/3'}>
-                    <img className="flex flex-shrink rounded-full h-80 m-auto" src={portrait}/>
+                    <img className="flex max-h-[30%] rounded-full m-auto" src={portrait}/>
                     <Timeline></Timeline>
                 </div>
 
