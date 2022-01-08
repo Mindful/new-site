@@ -1,6 +1,10 @@
 const path = require("path")
 const { createFilePath } = require("gatsby-source-filesystem")
 
+
+const langs = ["en", "ja"]
+
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
     const { createPage } = actions
 
@@ -34,18 +38,25 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const posts = result.data.allMarkdownRemark.edges
     const postsPerPage = 2
     const numPages = Math.ceil(posts.length / postsPerPage)
-    Array.from({ length: numPages }).forEach((_, i) => {
-        createPage({
-            path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-            component: path.resolve("./src/blogtemplate.js"),
-            context: {
-                limit: postsPerPage,
-                skip: i * postsPerPage,
-                numPages,
-                currentPage: i + 1,
-            },
+
+    langs.forEach(function (lang) {
+        Array.from({ length: numPages }).forEach((_, i) => {
+            let prefix = lang === "en" ? "" : '/' + lang
+            let url_pref = prefix + "/blog"
+            createPage({
+                path: i === 0 ? url_pref : `${url_pref}${i + 1}`,
+                component: path.resolve(`./src/blog_template.js`),
+                context: {
+                    limit: postsPerPage,
+                    skip: i * postsPerPage,
+                    numPages,
+                    currentPage: i + 1,
+                    lang: lang
+                },
+            })
         })
-    })
+        }
+    )
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

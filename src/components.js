@@ -152,7 +152,7 @@ export function Layout({lang, location, page_title, children, className}) {
                 ]}
             />
             <Header location={location} lang={lang}/>
-            <div className={"flex md:flex-row flex-col px-10 md:pr-0 items-center md:items-start " + (className ? className : '')}>
+            <div className={"flex md:flex-row flex-col px-5 md:pr-0 items-center md:items-start " + (className ? className : '')}>
                 {children}
                 <Sidebar/>
             </div>
@@ -177,13 +177,20 @@ export function ContentBox(props) {
     return BoundingBox({children: TextBox(props)})
 }
 
+export function BlogPost({className, post}) {
+    return <TextBox className={"flex-col" + (className ? className : '')}>
+        <Heading>
+            <PostLink key={post.id} post={post}>
+                {post.frontmatter.title}
+            </PostLink>
+        </Heading>
+        <span className={'mb-2'}>{post.frontmatter.date}</span>
+        <div className={'blogpost'}
+             dangerouslySetInnerHTML={{ __html: post.html }}
+        />
+    </TextBox>
+}
 
-
-// export function Textbox({lang, location, children, className}) {
-//     return <div className={"bg-white flex m-10 p-14 shadowed w-full " + (className ? className : '')}>
-//         {children}
-//     </div>
-// }
 
 export function Heading({children}) {
     return <header className={"text-4xl my-4"}>{children}</header>
