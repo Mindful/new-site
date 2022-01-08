@@ -7,7 +7,7 @@ import {Heading, Layout, ContentBox} from "../components"
 export default function IndexPage({data, location}) {
     let lang = "en";
     return (
-        <Layout lang={lang} location={location}>
+        <Layout lang={lang} location={location} page_title={"Software"}>
             <ContentBox className={'flex-col'}>
                 <Heading>Natural Language Processing</Heading>
                 <p>TODO</p>

@@ -12,6 +12,8 @@ import university from "./images/icon-university.svg";
 import { Chrono } from "react-chrono";
 import {theme} from "../tailwind.config";
 import portrait from "./images/portrait.jpg";
+import favicon from "./images/favicon.png"
+import {Helmet} from "react-helmet";
 
 export function Portrait() {
     return <img className="flex max-h-[30%] rounded-full m-auto" alt="Self portrait" src={portrait}/>
@@ -30,28 +32,6 @@ function Rightcard(props) {
 }
 
 export function Timeline() {
-    const items = [{
-            cardTitle: "2013/6",
-            cardDetailedText: "Intern@eBay Global Data Infra",
-        },
-        {
-            title: "2014/4",
-            cardDetailedText: "Exchange student@University of Hyogo",
-        },
-        {
-            title: "2015/4",
-            cardDetailedText: "Receive BS in Computer Science",
-        },
-        {
-            title: "2015/9",
-            cardDetailedText: "Engineer eBay Global Shipping",
-        },
-        {
-            title: "2016/7",
-            cardDetailedText: "Translate \"Maxel\" app into Japanese",
-        },
-    ];
-
     return <div className={'w-full'}>
             <Chrono mode="VERTICAL_ALTERNATING"  cardHeight={45}  theme={{
                 primary: theme.colors.black,
@@ -162,9 +142,15 @@ export function Header({lang, location}) {
     </nav>
 }
 
-export function Layout({lang, location, children, className}) {
+export function Layout({lang, location, page_title, children, className}) {
     return (
         <main>
+            <Helmet
+                title={"Joshua Tanner" + (page_title == null ? "" : " | " + page_title)}
+                link={[
+                    { rel: 'shortcut icon', type: 'image/png', href: favicon }
+                ]}
+            />
             <Header location={location} lang={lang}/>
             <div className={"flex md:flex-row flex-col px-10 md:pr-0 items-center md:items-start " + (className ? className : '')}>
                 {children}

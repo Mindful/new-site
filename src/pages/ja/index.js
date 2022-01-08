@@ -1,19 +1,19 @@
 import React from "react"
-import {Header, LanguageSelector, Sidebar, ContentBox} from "../../components"
+import {ContentBox, Layout, Portrait, Timeline} from "../../components"
 
 
 
 export default function IndexPage({data, location}) {
   let lang = "ja";
   return (
-      <main>
-        <Header location={location} lang={lang}/>
-        <div className="flex flex-row">
-            <ContentBox>
-                <p>工事中</p>
-            </ContentBox>
-            <Sidebar/>
-        </div>
-      </main>
+      <Layout lang={lang} location={location}>
+          <ContentBox className={'flex-row'}>
+              <div className={'w-1/3'}>
+                  <Portrait></Portrait>
+                  <Timeline></Timeline>
+              </div>
+              <p>工事中</p>
+          </ContentBox>
+      </Layout>
   )
 }

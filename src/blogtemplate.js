@@ -26,7 +26,7 @@ export default function blogtemplate({
             </TextBox>
         )
 
-    return <Layout lang={lang} location={location}>
+    return <Layout lang={lang} location={location} page_title={"Blog"}>
         <BoundingBox className={'flex-col'}>
             {Posts}
         </BoundingBox>

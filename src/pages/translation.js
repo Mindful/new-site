@@ -1,14 +1,12 @@
 import React from "react"
 import {Heading, Layout, ContentBox} from "../components"
-import portrait from "../images/portrait.jpg"
-
 
 
 
 export default function IndexPage({data, location}) {
     let lang = "en";
     return (
-        <Layout lang={lang} location={location}>
+        <Layout lang={lang} location={location} page_title={"Translation"}>
             <ContentBox className={'flex-col'}>
                 <Heading>Interpretation</Heading>
                 <p>TODO</p>

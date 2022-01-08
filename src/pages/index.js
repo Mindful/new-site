@@ -1,6 +1,5 @@
 import React from "react"
 import {Layout, ContentBox, Timeline, Portrait} from "../components"
-import portrait from "../images/portrait.jpg"
 
 
 
@@ -14,7 +13,6 @@ export default function IndexPage({data, location}) {
                     <Portrait></Portrait>
                     <Timeline></Timeline>
                 </div>
-
                 <p>Under construction</p>
             </ContentBox>
         </Layout>
