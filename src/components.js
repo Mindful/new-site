@@ -190,7 +190,7 @@ export function Heading({children}) {
 }
 
 export function Sidebar() {
-    return <div className="flex flex-row md:flex-col md:shrink-[0.15] bg-transparent md:h-full md:pr-5 md:pt-5
+    return <div className="flex flex-row md:flex-col md:shrink-[0.15] bg-transparent md:h-full md:mr-5 md:mt-10
     md:space-x-0 space-x-5 bg-transparent md:py-0 -my-5">
         <a href={'https://github.com/Mindful'}>
             <img src={github} alt="github" className="pt-2 pb-2"/>
