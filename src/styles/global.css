@@ -17,6 +17,10 @@
     }
 }
 
+#sortbox:checked ~ #sortboxmenu {
+    opacity: 1;
+}
+
 .blogpost  > p {
     @apply my-2
 }

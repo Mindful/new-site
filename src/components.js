@@ -137,17 +137,32 @@ export function Header({lang, location}) {
         </div>
         <div style={{borderLeft: "1px solid white", height: "100%"}} className="mr-6"/>
         <div className="flex w-full items-center text-white">
+
             <div className="hidden sm:flex">
-                <LangLink to={'/technical'} lang={lang} className="mr-4">
-                    SOFTWARE
-                </LangLink>
-                <LangLink to={'/translation'} lang={lang} className="mr-4">
-                    INTERPRETATION
-                </LangLink>
-                <LangLink to={'/blog'} lang={lang}>
-                    BLOG
-                </LangLink>
+                <LangLink to={'/technical'} lang={lang} className="mr-4">SOFTWARE</LangLink>
+                <LangLink to={'/translation'} lang={lang} className="mr-4">TRANSLATION</LangLink>
+                <LangLink to={'/blog'} lang={lang}>BLOG</LangLink>
             </div>
+
+
+            <div className="relative sm:hidden">
+                <input type="checkbox" id="sortbox" className="hidden absolute"/>
+                <label htmlFor="sortbox" className="flex items-center space-x-1 cursor-pointer">
+                    <svg className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </label>
+
+                <div id="sortboxmenu" className="absolute mt-2 right-1 top-full min-w-max shadow rounded opacity-0 bg-gray-300 border border-gray-400 transition delay-75 ease-in-out z-10">
+                    <ul className="block text-right text-gray-900">
+                        <li><LangLink to={'/technical'} lang={lang} className="block px-3 py-2 bg-green">SOFTWARE</LangLink></li>
+                        <li><LangLink to={'/translation'} lang={lang} className="block px-3 py-2 bg-green">TRANSLATION</LangLink></li>
+                        <li><LangLink to={'/blog'} lang={lang} className="block px-3 py-2 bg-green">BLOG</LangLink></li>
+                    </ul>
+                </div>
+            </div>
+
                 <LanguageSelector lang={lang} location={location} className="absolute right-4"/>
         </div>
     </nav>
@@ -195,7 +210,8 @@ export function Heading({children}) {
 }
 
 export function Sidebar() {
-    return <div className="flex flex-row md:flex-col md:shrink-[0.15] bg-transparent md:h-full md:pr-5 md:pt-5 md:space-x-0 space-x-5 bg-transparent">
+    return <div className="flex flex-row md:flex-col md:shrink-[0.15] bg-transparent md:h-full md:pr-5 md:pt-5
+    md:space-x-0 space-x-5 bg-transparent md:py-0 -my-5">
         <a href={'https://github.com/Mindful'}>
             <img src={github} alt="github" className="pt-2 pb-2"/>
         </a>
