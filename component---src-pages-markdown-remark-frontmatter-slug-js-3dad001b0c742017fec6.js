@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunksite=self.webpackChunksite||[]).push([[647],{5631:function(e,t,n){n.r(t),n.d(t,{default:function(){return c}});var a=n(7294),r=n(1979);function c(e){var t=e.data,n=e.location,c=t.markdownRemark;return a.createElement(r.Ar,{lang:"en",location:n},a.createElement(r.kB,null,a.createElement(r.JG,{post:c})))}}}]);
+//# sourceMappingURL=component---src-pages-markdown-remark-frontmatter-slug-js-3dad001b0c742017fec6.js.map
