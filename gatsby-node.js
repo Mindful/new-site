@@ -44,7 +44,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             let prefix = lang === "en" ? "" : '/' + lang
             let url_pref = prefix + "/blog"
             createPage({
-                path: i === 0 ? url_pref : `${url_pref}${i + 1}`,
+                path: i === 0 ? url_pref : `${url_pref}/${i + 1}`,
                 component: path.resolve(`./src/blog_template.js`),
                 context: {
                     limit: postsPerPage,

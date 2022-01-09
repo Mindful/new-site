@@ -1,10 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
-import github from "./images/scaled-github.svg";
-import se from "./images/scaled-se.svg";
-import linkedin from "./images/scaled-linkedin.svg";
-import scholar from "./images/scaled-scholar.svg";
-import email from "./images/scaled-email.svg";
+import github from "./images/social-github.svg";
+import se from "./images/social-se.svg";
+import linkedin from "./images/social-linkedin.svg";
+import scholar from "./images/social-scholar.svg";
+import email from "./images/social-email.svg";
+import twitter from "./images/social-twitter.svg";
 import graduation from "./images/icon-graduation.svg";
 import translation from "./images/icon-language.svg";
 import work from "./images/icon-work.svg";
@@ -162,7 +163,7 @@ export function Layout({lang, location, page_title, children, className}) {
 
 
 export function TextBox(props) {
-    return <div className={'flex p-14 bg-white shadowed w-full ' + (props.className ? props.className : '')}>
+    return <div className={'flex p-8 sm:p-14 bg-white shadowed w-full ' + (props.className ? props.className : '')}>
         {props.children}
     </div>
 }
@@ -180,7 +181,7 @@ export function ContentBox(props) {
 export function BlogPost({className, post}) {
     return <TextBox className={"flex-col" + (className ? className : '')}>
         <Heading>
-            <PostLink key={post.id} post={post}>
+            <PostLink post={post}>
                 {post.frontmatter.title}
             </PostLink>
         </Heading>
@@ -193,26 +194,29 @@ export function BlogPost({className, post}) {
 
 
 export function Heading({children}) {
-    return <header className={"text-4xl my-4"}>{children}</header>
+    return <header className={"text-3xl md:text-4xl my-4"}>{children}</header>
 }
 
 export function Sidebar() {
     return <div className="flex flex-row md:flex-col md:shrink-[0.15] bg-transparent md:h-full md:mr-5 md:mt-10
-    md:space-x-0 space-x-5 bg-transparent md:py-0 -my-5">
+     bg-transparent md:py-0 -my-5">
         <a href={'https://github.com/Mindful'}>
-            <img src={github} alt="github" className="pt-2 pb-2"/>
+            <img src={github} alt="github" className="w-3/4 h-3/4 pt-2 pb-2"/>
         </a>
         <a href={'https://stackexchange.com/users/5319885/mindful'}>
-            <img src={se} alt="stack exchange" className="pt-2 pb-2"/>
+            <img src={se} alt="stack exchange" className="w-3/4 h-3/4 pt-2 pb-2"/>
+        </a>
+        <a href={'https://twitter.com/mindful_jt'}>
+            <img src={twitter} alt="twitter" className="w-3/4 h-3/4 pt-2 pb-2"/>
         </a>
         <a href={'https://www.linkedin.com/in/joshuatanner2'}>
-            <img src={linkedin} alt="linkedin" className="pt-2 pb-2"/>
+            <img src={linkedin} alt="linkedin" className="w-3/4 h-3/4 pt-2 pb-2"/>
         </a>
         <a href={'https://scholar.google.com/citations?user=OqYthY0AAAAJ&h'}>
-            <img src={scholar} alt="google scholar" className="pt-2 pb-2"/>
+            <img src={scholar} alt="google scholar" className="w-3/4 h-3/4 pt-2 pb-2"/>
         </a>
         <a href={'mailto:mindful.jt@gmail.com'}>
-            <img src={email} alt="email" className="pt-2 pb-2"/>
+            <img src={email} alt="email" className="w-3/4 h-3/4 pt-2 pb-2"/>
         </a>
     </div>
 }
