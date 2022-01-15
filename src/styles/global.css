@@ -61,7 +61,7 @@
 /* https://tailwindcomponents.com/component/pure-css-dropdown-menu */
 
 #sortbox:checked ~ #sortboxmenu {
-    opacity: 1;
+    @apply flex
 }
 
 /* https://alvarotrigo.com/blog/hamburger-menu-css/ https://codepen.io/alvarotrigo/pen/PoJGObg */

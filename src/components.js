@@ -128,7 +128,7 @@ export function Header({lang, location}) {
                 <input type="checkbox" id="sortbox" className="toggler"/>
                 <div className="hamburger"><div></div></div>
 
-                <div id="sortboxmenu" className="absolute mt-2 right-1 top-full min-w-max shadow rounded opacity-0 bg-gray-300 border border-gray-400 transition delay-75 ease-in-out z-10">
+                <div id="sortboxmenu" className="absolute mt-2 right-1 top-full min-w-max shadow rounded hidden bg-gray-300 border border-gray-400 transition delay-75 ease-in-out z-10">
                     <ul className="block text-right text-gray-900">
                         <li><LangLink to={'/technical'} lang={lang} className="block px-3 py-2 bg-green">SOFTWARE</LangLink></li>
                         <li><LangLink to={'/translation'} lang={lang} className="block px-3 py-2 bg-green">TRANSLATION</LangLink></li>
