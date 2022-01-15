@@ -1,8 +1,12 @@
 module.exports = {
   pathPrefix: "/new-site",
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "site",
+    title: "Joshua Tanner",
+    titleTemplate: "%s · Joshua Tanner",
+    description: "Personal site and blog of developer & translator Joshua Tanner",
+    url: "https://www.joshuatanner.dev", // No trailing slash allowed!
+    image: "/snape.jpg", // Path to the image placed in the 'static' folder, in the project's root directory.
+    twitterUsername: "@mindful_jt",
   },
   plugins: [
     "gatsby-plugin-image",

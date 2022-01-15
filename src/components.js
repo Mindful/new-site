@@ -81,18 +81,18 @@ export function Timeline() {
 
 }
 
-export function PostLink({ post }) {
-    return <div>
-        <Link to={post.frontmatter.slug}>
-            {post.frontmatter.title}
-        </Link>
-    </div>
-}
-
 export function LangLink({lang, to, children, className}) {
     return <Link to={lang === 'en' ? to : '/'+lang+to} className={className}>
         {children}
     </Link>
+}
+
+export function PostLink({ post, lang }) {
+    return <div>
+        <LangLink to={post.frontmatter.slug} lang={lang}>
+            {post.frontmatter.title}
+        </LangLink>
+    </div>
 }
 
 // https://www.gatsbyjs.com/blog/2020-02-19-how-to-build-multilingual-sites-with-gatsby/
@@ -178,12 +178,13 @@ export function ContentBox(props) {
     return BoundingBox({children: TextBox(props)})
 }
 
-export function BlogPost({className, post}) {
+export function BlogPost({className, post, lang, headerLink}) {
     return <TextBox className={"flex-col" + (className ? className : '')}>
         <Heading>
-            <PostLink post={post}>
-                {post.frontmatter.title}
-            </PostLink>
+            {headerLink
+                ? <PostLink post={post} lang={lang}>{post.frontmatter.title}</PostLink>
+                : post.frontmatter.title
+            }
         </Heading>
         <span className={'mb-2'}>{post.frontmatter.date}</span>
         <div className={'blogpost'}

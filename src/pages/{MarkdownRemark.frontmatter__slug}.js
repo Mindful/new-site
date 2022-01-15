@@ -4,13 +4,14 @@ import {BlogPost, BoundingBox, Layout} from "../components";
 
 export default function Template({
                                      data, // this prop will be injected by the GraphQL query below.
+                                     pageContext,
                                      location
                                  }) {
     const { markdownRemark } = data // data.markdownRemark holds your post data
     return (
-        <Layout lang={'en'} location={location}>
+        <Layout lang={'lang' in pageContext ? pageContext.lang : 'en'} location={location}>
             <BoundingBox>
-                <BlogPost post={markdownRemark}/>
+                <BlogPost headerLink={false} post={markdownRemark}/>
             </BoundingBox>
         </Layout>
     )

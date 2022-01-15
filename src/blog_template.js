@@ -12,7 +12,7 @@ export default function blog_template({
     const Posts = edges
         .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
         .map((edge, index) =>
-            <BlogPost key={edge.node.id} className={index === edges.length - 1 ? '' : ' mb-6'} post={edge.node}/>
+            <BlogPost headerLink={true} lang={pageContext.lang} key={edge.node.id} className={index === edges.length - 1 ? '' : ' mb-6'} post={edge.node}/>
         )
 
     const page_range = [...Array(pageContext.numPages).keys()]

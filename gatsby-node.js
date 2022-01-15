@@ -5,6 +5,17 @@ const { createFilePath } = require("gatsby-source-filesystem")
 const langs = ["en", "ja"]
 
 
+exports.onCreateNode = ({ node, actions, getNode }) => {
+    const { createNodeField } = actions
+    if (node.internal.type === `MarkdownRemark`) {
+        createNodeField({
+            name: `slug`,
+            node,
+            value: node.frontmatter.slug,
+        })
+    }
+}
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
     const { createPage } = actions
 
@@ -17,6 +28,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         ) {
           edges {
             node {
+              id
               fields {
                 slug
               }
@@ -33,9 +45,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
 
     // ...
+    const posts = result.data.allMarkdownRemark.edges
+
+    posts.forEach(({ node }, index) => {
+        createPage({
+            path: '/ja' + node.fields.slug,
+            component: path.resolve(`./src/pages/{MarkdownRemark.frontmatter__slug}.js`),
+            context: { id: node.id, lang: 'ja' },
+        })
+    })
 
     // Create blog-list pages
-    const posts = result.data.allMarkdownRemark.edges
     const postsPerPage = 2
     const numPages = Math.ceil(posts.length / postsPerPage)
 
@@ -57,16 +77,4 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         })
         }
     )
-}
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
-    const { createNodeField } = actions
-    if (node.internal.type === `MarkdownRemark`) {
-        const value = createFilePath({ node, getNode })
-        createNodeField({
-            name: `slug`,
-            node,
-            value,
-        })
-    }
 }
