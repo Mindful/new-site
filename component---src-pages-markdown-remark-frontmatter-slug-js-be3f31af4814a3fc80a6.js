@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunksite=self.webpackChunksite||[]).push([[647],{5631:function(e,n,t){t.r(n),t.d(n,{default:function(){return l}});var a=t(7294),r=t(1979);function l(e){var n=e.data,t=e.pageContext,l=e.location,c=n.markdownRemark;return a.createElement(r.Ar,{lang:"lang"in t?t.lang:"en",location:l},a.createElement(r.kB,null,a.createElement(r.JG,{headerLink:!1,post:c})))}}}]);
+//# sourceMappingURL=component---src-pages-markdown-remark-frontmatter-slug-js-be3f31af4814a3fc80a6.js.map
