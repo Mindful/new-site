@@ -199,24 +199,24 @@ export function Heading({children}) {
 
 export function Sidebar() {
     return <div className="flex flex-row md:flex-col md:shrink-[0.15] bg-transparent md:h-full md:mr-5 md:mt-10
-     bg-transparent md:py-0 -my-5">
+     bg-transparent md:py-0 -my-5 space-x-8 md:space-x-0">
         <a href={'https://github.com/Mindful'}>
-            <img src={github} alt="github" className="w-3/4 h-3/4 pt-2 pb-2"/>
+            <img src={github} alt="github" className="w-auto h-auto md:w-3/4 md:h-3/4 pt-2 pb-2"/>
         </a>
         <a href={'https://stackexchange.com/users/5319885/mindful'}>
-            <img src={se} alt="stack exchange" className="w-3/4 h-3/4 pt-2 pb-2"/>
+            <img src={se} alt="stack exchange" className="w-auto h-auto md:w-3/4 md:h-3/4 pt-2 pb-2"/>
         </a>
         <a href={'https://twitter.com/mindful_jt'}>
-            <img src={twitter} alt="twitter" className="w-3/4 h-3/4 pt-2 pb-2"/>
+            <img src={twitter} alt="twitter" className="w-auto h-auto md:w-3/4 md:h-3/4 pt-2 pb-2"/>
         </a>
         <a href={'https://www.linkedin.com/in/joshuatanner2'}>
-            <img src={linkedin} alt="linkedin" className="w-3/4 h-3/4 pt-2 pb-2"/>
+            <img src={linkedin} alt="linkedin" className="w-auto h-auto md:w-3/4 md:h-3/4 pt-2 pb-2"/>
         </a>
         <a href={'https://scholar.google.com/citations?user=OqYthY0AAAAJ&h'}>
-            <img src={scholar} alt="google scholar" className="w-3/4 h-3/4 pt-2 pb-2"/>
+            <img src={scholar} alt="google scholar" className="w-auto h-auto md:w-3/4 md:h-3/4 pt-2 pb-2"/>
         </a>
         <a href={'mailto:mindful.jt@gmail.com'}>
-            <img src={email} alt="email" className="w-3/4 h-3/4 pt-2 pb-2"/>
+            <img src={email} alt="email" className="w-auto h-auto md:w-3/4 md:h-3/4 pt-2 pb-2"/>
         </a>
     </div>
 }
