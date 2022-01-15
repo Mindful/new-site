@@ -13,8 +13,7 @@ import university from "./images/icon-university.svg";
 import { Chrono } from "react-chrono";
 import {theme} from "../tailwind.config";
 import portrait from "./images/portrait.jpg";
-import favicon from "./images/favicon.png"
-import {Helmet} from "react-helmet";
+import SeoComponent from "./seo";
 
 export function Portrait() {
     return <img className="flex max-h-[30%] rounded-full m-auto" alt="Self portrait" src={portrait}/>
@@ -146,12 +145,7 @@ export function Header({lang, location}) {
 export function Layout({lang, location, page_title, children, className}) {
     return (
         <main>
-            <Helmet
-                title={"Joshua Tanner" + (page_title == null ? "" : " | " + page_title)}
-                link={[
-                    { rel: 'shortcut icon', type: 'image/png', href: favicon }
-                ]}
-            />
+            <SeoComponent title={page_title}/>
             <Header location={location} lang={lang}/>
             <div className={"flex md:flex-row flex-col px-5 md:pr-0 items-center md:items-start " + (className ? className : '')}>
                 {children}

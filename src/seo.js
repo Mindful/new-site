@@ -3,31 +3,31 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
+import favicon from "./images/favicon.png"
 
-const SEO = ({ title, description, image, article }) => {
+
+const SeoComponent = ({ title, description, image, article }) => {
     const { pathname } = useLocation()
     const { site } = useStaticQuery(query)
 
     const {
-        defaultTitle,
-        titleTemplate,
         defaultDescription,
         siteUrl,
-        defaultImage,
         twitterUsername,
     } = site.siteMetadata
 
     const seo = {
-        title: title || defaultTitle,
+        title: title,
         description: description || defaultDescription,
-        image: `${siteUrl}${image || defaultImage}`,
+        image: `${siteUrl}${image || favicon}`,
         url: `${siteUrl}${pathname}`,
     }
 
     return (
-        <Helmet title={seo.title} titleTemplate={titleTemplate}>
+        <Helmet title={(seo.title == null ? "" : seo.title + " | ") + "Joshua Tanner"}>
             <meta name="description" content={seo.description} />
             <meta name="image" content={seo.image} />
+            <link rel="icon" type="image/png" href={favicon} sizes="16x16" />
 
             {seo.url && <meta property="og:url" content={seo.url} />}
 
@@ -58,16 +58,16 @@ const SEO = ({ title, description, image, article }) => {
     )
 }
 
-export default SEO
+export default SeoComponent
 
-SEO.propTypes = {
+SeoComponent.propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
     image: PropTypes.string,
     article: PropTypes.bool,
 }
 
-SEO.defaultProps = {
+SeoComponent.defaultProps = {
     title: null,
     description: null,
     image: null,
@@ -78,11 +78,8 @@ const query = graphql`
   query SEO {
     site {
       siteMetadata {
-        defaultTitle: title
-        titleTemplate
         defaultDescription: description
         siteUrl: url
-        defaultImage: image
         twitterUsername
       }
     }

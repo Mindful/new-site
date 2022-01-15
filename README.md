@@ -1,10 +1,7 @@
 todo:
-- [ ] SEO: https://www.gatsbyjs.com/docs/add-seo-component/
 - [ ] finish timeline (make multulingual) and other content
-
-JA index doesn't work on github pages/JA links are buggy on github pages,
-but this may not matter long term
-
+- [ ] deploy to GH pages and update joshuatanner.dev to point to this site,
+make sure URLs work properly (JA links are buggy on current setup)
 
 ### Run locally
 ```shell
