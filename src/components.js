@@ -16,7 +16,7 @@ import portrait from "./images/portrait.jpg";
 import SeoComponent from "./seo";
 
 export function Portrait() {
-    return <img className="flex max-h-[30%] rounded-full m-auto" alt="Self portrait" src={portrait}/>
+    return <img className="flex max-w-[50%] rounded-full m-auto" alt="Self portrait" src={portrait}/>
 }
 
 function Leftcard(props) {
@@ -31,7 +31,8 @@ function Rightcard(props) {
     </div>
 }
 
-export function Timeline() {
+export function Timeline({lang}) {
+    let x = {en: 'Engineer@Mantra Inc.', ja: 'エンジニア@Mantra株式会社'}[lang]
     return <div className={'w-full'}>
             <Chrono mode="VERTICAL_ALTERNATING"  cardHeight={45}  theme={{
                 primary: theme.colors.black,
@@ -41,39 +42,42 @@ export function Timeline() {
                 titleColor: theme.colors.black
             }} hideControls={true} useReadMore={false} scrollable={false}>
 
-                <Leftcard date={'2013/6'} content={'Intern@eBay Global Data Infrastructure'}/>
-                <Rightcard date={'2014/4'} content={'Exchange student@University of Hyogo'}/>
-                <Leftcard date={'2015/4'} content={'BS in Computer Science'}/>
-                <Rightcard date={'2015/9'} content={'Engineer@eBay Global Shipping'}/>
-                <Leftcard date={'2016/7'} content={'Translate "Maxel" app into Japanese'}/>
-                <Rightcard date={'2016/11'} content={'Engineer@eBay New Product Dev'}/>
-                <Leftcard date={'2018/9'} content={'Interpreter@Japan-America Grassroots Summit'}/>
-                <Rightcard date={'2019/4'} content={'Interpreter@Sakura-Con'}/>
-                <Leftcard date={'2019/8'} content={'Interpreter@Jonathan Ng Japan Tour'}/>
-                <Rightcard date={'2019/9'} content={'Interpreter@Crunchyroll Expo'}/>
-                <Leftcard date={'2019/9'} content={'Grad student@University of Washington'}/>
-                <Rightcard date={'2020/6'} content={'Research Intern@Octanove Labs'}/>
-                <Leftcard date={'2020/12'} content={'Research Intern@University of Tokyo'}/>
-                <Rightcard date={'2021/7'} content={'Intern@Mantra Inc. & Fuku Inc.'}/>
-                <Leftcard date={'2015/4'} content={'MSc in Computational Linguistics'}/>
+                <Leftcard date={'2021/12'} content={{en: 'Engineer@Mantra Inc.', ja: 'エンジニア@Mantra株式会社'}[lang]}/>
+                <Rightcard date={'2021/12'} content={{en: 'MSc in Computational Linguistics', ja: '計算言語学の理学修士を取得'}[lang]}/>
+                <Leftcard date={'2021/7'} content={{en: 'Intern@Mantra Inc. & Fuku Inc.', ja: 'インターン@Mantra株式会社とFuku株式会社'}[lang]}/>
+                <Rightcard date={'2020/12'} content={{en: 'Research Intern@University of Tokyo IIS', ja: '研究実習生@東京大学生産技術研究所'}[lang]}/>
+                <Leftcard date={'2020/6'} content={{en: 'Research Intern@Octanove Labs', ja: '研究インターン@Octanove Labs'}[lang]}/>
+                <Rightcard date={'2019/9'} content={{en: 'Grad student@University of Washington', ja: '大学院生@ワシントン大学'}[lang]}/>
+                <Leftcard date={'2019/9'} content={{en: 'Interpreter@Crunchyroll Expo', ja: '通訳者@クランチーロールエキスポ'}[lang]}/>
+                <Rightcard date={'2019/8'} content={{en: 'Interpreter@Jonathan Ng Japan Tour', ja: '通訳者@Jonathan Ng 日本ツアー'}[lang]}/>
+                <Leftcard date={'2019/4'} content={{en: 'Interpreter@Sakura-Con', ja: '通訳者@サクラコン'}[lang]}/>
+                <Rightcard date={'2018/9'} content={{en: 'Interpreter@Japan-America Grassroots Summit', ja: '通訳者@日米草の根交流サミット大会'}[lang]}/>
+                <Leftcard date={'2016/11'} content={{en: 'Engineer@eBay New Product Dev', ja: 'エンジニア@eBay新商品開発部'}[lang]}/>
+                <Rightcard date={'2016/7'} content={{en: 'Translate "Maxel" app into Japanese', ja: 'Maxelアプリを和訳'}[lang]}/>
+                <Leftcard date={'2015/9'} content={{en: 'Engineer@eBay Global Shipping', ja: 'エンジニア@国際配送管理部'}[lang]}/>
+                <Rightcard date={'2015/4'} content={{en: 'BS in Computer Science', ja: 'コンピュータサイエンスの理学士を取得'}[lang]}/>
+                <Leftcard date={'2014/4'} content={{en: 'Exchange student@University of Hyogo', ja: '留学生@兵庫県立大学'}[lang]}/>
+                <Rightcard date={'2013/6'} content={{en: 'Intern@eBay Global Data Infrastructure', ja: 'インターン@eBay国際データインフラ部'}[lang]}/>
+
 
 
                 <div className="chrono-icons">
                     <img src={work} alt="" />
-                    <img src={university} alt="" />
                     <img src={graduation} alt="" />
                     <img src={work} alt="" />
-                    <img src={translation} alt="" />
-                    <img src={work} alt="" />
-                    <img src={translation} alt="" />
-                    <img src={translation} alt="" />
-                    <img src={translation} alt="" />
-                    <img src={translation} alt="" />
                     <img src={university} alt="" />
                     <img src={work} alt="" />
                     <img src={university} alt="" />
+                    <img src={translation} alt="" />
+                    <img src={translation} alt="" />
+                    <img src={translation} alt="" />
+                    <img src={translation} alt="" />
+                    <img src={work} alt="" />
+                    <img src={translation} alt="" />
                     <img src={work} alt="" />
                     <img src={graduation} alt="" />
+                    <img src={university} alt="" />
+                    <img src={work} alt="" />
                 </div>
             </Chrono>
         </div>
@@ -81,7 +85,7 @@ export function Timeline() {
 }
 
 export function LangLink({lang, to, children, className}) {
-    return <Link to={lang === 'en' ? to : '/'+lang+to} className={className}>
+    return <Link to={lang === 'en' ? to : '/'+lang+'/'+to} className={className}>
         {children}
     </Link>
 }
