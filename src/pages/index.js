@@ -16,8 +16,8 @@ export default function IndexPage({data, location}) {
                 <div className={'w-full sm:pl-5 sm:w-1/2'}>
                     <p>Hi there! My name is Joshua Tanner, and I currently work as a software engineer
                         at <a className={'inline underline'} href={'https://mantra.co.jp/index_en.html'}>Mantra Inc.</a> As an engineer I
-                        work primarily in <LangLink lang={lang} className={'inline underline'} to={'technical'}>natural language processing and backend development</LangLink>,
-                        and I also occasionally work as a <LangLink lang={lang} className={'inline underline'} to={'translation'}>translator and interpreter</LangLink>.
+                        work primarily in <LangLink lang={lang} className={'inline underline'} to={'/technical'}>natural language processing and backend development</LangLink>,
+                        and I also occasionally work as a <LangLink lang={lang} className={'inline underline'} to={'/translation'}>translator and interpreter</LangLink>.
                     </p>
                     <br/>
                     <p>

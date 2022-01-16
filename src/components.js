@@ -85,7 +85,7 @@ export function Timeline({lang}) {
 }
 
 export function LangLink({lang, to, children, className}) {
-    return <Link to={lang === 'en' ? to : '/'+lang+'/'+to} className={className}>
+    return <Link to={lang === 'en' ? to : '/'+lang+to} className={className}>
         {children}
     </Link>
 }
