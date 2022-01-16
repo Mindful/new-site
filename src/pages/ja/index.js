@@ -13,7 +13,7 @@ export default function IndexPage({data, location}) {
                   <Timeline lang={lang}></Timeline>
               </div>
               <div className={'w-full sm:pl-5 sm:w-1/2'}>
-                  <p>初めまして！<a className={'inline underline'} href={'https://mantra.co.jp/index_en.html'}>Mantra株式会社</a>
+                  <p>初めまして！<a className={'inline underline'} href={'https://mantra.co.jp/index.html'}>Mantra株式会社</a>
                       でエンジニアを務めている、ジョシュア・ターナーと申します。 エンジニアとしては
                       <LangLink lang={lang} className={'inline underline'} to={'/technical'}>自然言語処理とバックエンド開発</LangLink>
                       を専門に扱っていますが、たまに<LangLink lang={lang} className={'inline underline'} to={'/translation'}>翻訳家や通訳者</LangLink>
